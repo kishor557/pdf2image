@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Converts pdf to image}
   spec.description   = %q{pdf2image accepts pdf file path as input and converts into a jpeg image}
-  spec.homepage      = "https://rubygems.org/gems/pdf2image"
+  spec.homepage      = "https://github.com/kishor557/pdf2image"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

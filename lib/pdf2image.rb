@@ -1,7 +1,9 @@
 require "pdf2image/version"
 require 'rmagick'
 
+# converts pdf to jpeg
 module Pdf2image
+  
   
   def self.welcome
     puts "You are using Pdf2image Gem!!"
@@ -11,15 +13,11 @@ module Pdf2image
     filepath = File.dirname(path)
     extn = File.extname path
     filename = File.basename path, extn
-    puts "Name" + filename
 
     pdf = Magick::ImageList.new(path)
     if pdf.format == "PDF"
-      puts pdf.format.inspect
       pdf.write(filepath + "/" + filename + ".jpg")
-#    elsif pdf.format == "JPEG"  
-#        puts "hello"
-#       pdf.write(filename + ".pdf")
+      STDOUT.put "\033[107;31m Your file saved in #{filepath}\033[0m"
     else
       raise StandardError, "Please enter valid PDF file path!"
     end
